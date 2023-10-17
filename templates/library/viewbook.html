@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>All Books</title>
+<link rel="icon" type="image/x-icon" href="/static/images/lib.png">
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Sofia+Sans+Condensed:ital,wght@1,300;1,500&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Orbitron:wght@800&family=Pixelify+Sans:wght@700&family=Risque&family=Merienda:wght@600&display=swap" rel="stylesheet">
+
+
+  <style media="screen">
+    .tblhead {
+      display: flex;
+      justify-content: center;
+      /* align-items: ; */
+      margin: 10px 10px;
+
+    }
+
+    .table-heading {
+      text-align: center;
+      border-radius: 50px;
+      font-family: 'Sedgwick Ave Display', cursive, 'wellfleet', 'Algerian';
+      font-size: 60px;
+      /* border: 2px rgba(255, 255, 0, 0.486); */
+      /* border-style: outset; */
+      padding: 8px 20px 0 20px;
+      transition-duration: 1s;
+    }
+
+    .table-heading:hover {
+      /* box-shadow: 1px 1px 25px 10px #E49B0F; */
+      box-shadow: 1px 1px 25px 10px rgba(255, 255, 0, 0.486);;
+
+    }
+
+
+table.redTable {
+border: 2px solid #607d8b;
+background-color: #EEE7DB;
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+table.redTable td, table.redTable th {
+border: 1px solid #AAAAAA;
+padding: 3px 2px;
+}
+table.redTable tbody td {
+font-size: 13px;
+}
+table.redTable tr:nth-child(even) {
+background: #ffffff;
+}
+table.redTable thead {
+background: #607d8b;
+}
+table.redTable thead th {
+font-size: 19px;
+font-weight: bold;
+color: #FFFFFF;
+text-align: center;
+border-left: 2px solid #607d8b;
+}
+table.redTable thead th:first-child {
+border-left: none;
+}
+
+table.redTable tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+background: #607d8b;
+}
+table.redTable tfoot td {
+font-size: 13px;
+}
+table.redTable tfoot .links {
+text-align: right;
+}
+table.redTable tfoot .links a{
+display: inline-block;
+background: #FFFFFF;
+color: #607d8b;
+padding: 2px 8px;
+border-radius: 5px;
+}
+
+.tableborder {
+      /* border-top-right-radius: 12px; */
+      border: 1.5px solid black;
+      transition-duration: 1s;
+      /* background-color: #f3be5bb5; */
+      background-color: rgba(255, 255, 0, 0.186);
+    }
+
+    .tableborder:hover {
+      /* box-shadow: 1px 1px 25px 10px #E49B0F; */
+/* transform: scale(1.1); */
+    }
+
+
+.notbook{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  height: 350px;
+  /* border: 2px solid black; */
+  
+  
+  
+}
+.notbook img{
+  max-width:500px ;
+  /* box-shadow: 1px 1px 25px 10px #E49B0F; */
+
+
+
+}
+.notheading{
+ 
+  font-family: Merienda;
+  margin: 0;
+  text-align: center;
+  /* border: 2px solid black; */
+  transform: translatey(-140px);
+}
+
+
+</style>
+  </head>
+<body style="background-color: rgba(255, 255, 0, 0.386);">
+  
+    {% include "library/navbaradmin.html" %}
+    <br>
+    <br>
+
+    <div class="tblhead">
+    <h1 class="table-heading">Available Books In Library</h1>
+  </div>
+    {% if books%}
+<div class="container">
+  <table class="table table-hover table-condensed table-striped tableborder">
+    <thead>
+    <tr>
+    <th>Book Name</th>
+    <th>ISBN</th>
+    <th>Author</th>
+    <th>Category</th>
+    <th>Delete</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+    <td colspan="4" rowspan="4">
+    <div class="links"></div>
+    </td>
+    </tr>
+    </tfoot>
+    <tbody>
+      {% for book in books %}
+        <tr>
+          <td>{{book.name}}</td>
+          <td>{{book.isbn}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.category}}</td>
+
+          <td><a href="delete/{{book.id}}" class="btn btn-danger"> Delete</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    </table>
+</div>
+{%else%}
+<div class="notbook">
+<img src="/static/images/nobook.png" alt="">
+</div>
+<h1 class="notheading">Library Is Empty</h1>
+{%endif%}
+
+
+<br><br><br><br><br><br><br><br><br>
+    {% include "library/footer.html" %}
+  </body>
+</html>

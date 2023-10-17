@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>LMS Django</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<style type="text/css">
+    .bs-example{
+        margin: 0px;
+
+    }
+.navbar-brand{
+  font-size: 20px;
+  font-family: sans-serif;
+
+}
+
+
+#navlogo {
+      height: 31px;
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+
+
+    .navbar-nav {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a {
+      font-size: 1.5rem;
+      padding: rem 3rem;
+      color: #f4f4f4;
+      text-transform: uppercase;
+      margin-right: 20px;
+      /* height: 30px; */
+
+      font-size: 12px;
+    }
+
+
+    .btn-nav {
+      text-decoration: none;
+      border: 1px solid rgb(146, 148, 248);
+      position: relative;
+      overflow: hidden;
+
+
+    }
+
+    .btn-nav:hover {
+      box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+    }
+
+    .btn-nav:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(146, 148, 248, 0.4), transparent);
+      transition: all 650ms;
+    }
+
+    .btn-nav:hover:before {
+      left: 100%;
+    }
+
+    .drpdwn {
+      border: 1px solid black;
+      border-radius: 15px;
+      background: #343a40;
+
+    }
+
+    .drpdwn a {
+      text-align: center;
+      border: none;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 85%;
+      color: white;
+      margin: auto;
+      /* margin-top: 4px;   */
+      border-radius: 20px;
+      background: transparent;
+
+    }
+
+    .drpdwn a:hover {
+      color: white;
+      background: transparent;
+    }
+
+
+    .navigate {
+      background-color: #343a40;
+      border: 2px solid black;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      height: 50px;
+
+    }
+
+
+
+
+</style>
+</head>
+<body>
+
+
+
+<div class="bs-example">
+    <nav class="navbar navbar-expand-md  navbar-dark fixed-top navigate">
+        <a href="/" class="navbar-brand"><img id="navlogo" src="/static/images/navgif.gif" alt="lib" srcset=""> </a>
+
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav">
+                
+            </div>
+
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link active btn-nav">Home</a>
+                <!--for issuebook dropdown button-->
+                <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle btn-nav" data-toggle="dropdown">Issue Book</a>
+                  <div class="dropdown-menu drpdwn">
+                    <a href="viewissuedbookbystudent" class="dropdown-item btn-nav">View Issued Book</a>
+                  </div>
+                </div>
+                <a href="logout" class="nav-item nav-link btn-nav">LOGOUT</a> &nbsp
+            </div>
+
+        </div>
+    </nav>
+</div>
+
+
+</body>
+</html>

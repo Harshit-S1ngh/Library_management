@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Admin Signup</title>
+<link rel="icon" type="image/x-icon" href="/static/images/lib.png">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Orbitron:wght@800&family=Pixelify+Sans:wght@700&family=Risque&family=Merienda:wght@600&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@600&display=swap" rel="stylesheet"> -->
+
+
+
+
+
+
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+		input {
+			caret-color: red;
+		}
+
+		body {
+			margin: 0;
+			width: 100vw;
+			height: 100vh;
+			background: #ecf0f3;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+			place-items: center;
+			overflow: hidden;
+			font-family: poppins;
+		}
+
+		.signup-form {
+			position: relative;
+			width: 750px;
+			height: 510px;
+			border-radius: 20px;
+			padding: 40px;
+			box-sizing: border-box;
+			background: #ecf0f3;
+			box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+			top: 25px;
+		}
+
+		.adminsignup-img {
+			height: 100px;
+			width: 100px;
+			margin: auto;
+			border-radius: 50%;
+			box-sizing: border-box;
+			display: flex;
+			justify-content: center;
+			box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+			/* margin-top: -25px; */
+			margin-bottom: 10px;
+		}
+
+		.heading-adminlogin {
+			margin-top: 10px;
+			font-weight: 900;
+			font-size: 1.8rem;
+			color: #1DA1F2;
+			letter-spacing: 1px;
+		}
+
+		.inputs {
+			text-align: left;
+			margin-top: 30px;
+		}
+
+		label,
+		input,
+		button {
+			display: block;
+			width: 100%;
+			padding: 0;
+			border: none;
+			outline: none;
+			box-sizing: border-box;
+		}
+
+		label {
+			margin-bottom: 4px;
+		}
+
+		label:nth-of-type(2) {
+			margin-top: 12px;
+		}
+
+		input::placeholder {
+			color: gray;
+			font-family: 'Segoe print', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		input {
+			background: #ecf0f3;
+			padding: 10px;
+			padding-left: 20px;
+			height: 50px;
+			font-size: 14px;
+			border-radius: 50px;
+			box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+			border: 2px solid #2596be;
+		}
+
+		input:focus {
+			border: 2px solid black;
+		}
+
+		.butn {
+			color: white;
+			margin-top: 20px;
+			background-color: #1DA1F2;
+			height: 50px;
+			width: 100%;
+			border-radius: 20px;
+			cursor: pointer;
+			font-weight: 900;
+			box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+			transition: 0.5s;
+			border-radius: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 15px;
+			margin-bottom: 25px;
+			border: 2px solid gray;
+			font-family: 'Orbitron', sans-serif;
+			font-size: 26px;
+			color: rgba(0, 0, 0, 0.814);
+			letter-spacing: 4px;
+		}
+
+		.butn:hover {
+			/* box-shadow: none; */
+			color: black;
+			background: rgba(0, 0, 128, 0.715);
+			border: 3px solid navy;
+		}
+
+		.signupbtn {
+			/* position: absolute; */
+			font-size: 14px;
+			bottom: 4px;
+			right: 4px;
+			text-decoration: none;
+			color: rgba(0, 0, 0, 0.474);
+			background: #1da0f283;
+			border-radius: 10px;
+			padding: 2px;
+			display: flex;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			border: 2px solid transparent;
+			min-height: 30px;
+			font-family: 'freestyle';
+
+		}
+
+		.signupbtn:hover {
+			border: 2px solid #15a0f7;
+		}
+
+		.signupbtn a {
+			text-decoration: none;
+			color: #000;
+			font-family: 'Pixelify Sans', cursive;
+			background: #0c8ad7;
+			margin: 0 10px 0 10px;
+			padding: 0 10px 0 10px;
+			border-radius: 20px;
+
+
+		}
+
+		.signupbtn a:hover {
+			text-decoration: none;
+			color: black;
+			background: rgba(0, 0, 128, 0.715);
+			border: 1px solid navy;
+		}
+
+		.h2 {
+			font-family: 'Merienda', cursive;
+			margin: 20px;
+
+		}
+
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.form-items {
+			margin-top: 15px;
+
+		}
+
+		.form-left {
+			margin-right: 40px;
+		}
+
+		.form-right {
+			margin-left: 40px;
+		}
+	</style>
+
+
+
+
+
+
+
+</head>
+
+<body>
+	{% include "library/navbar.html" %}
+	<br>
+	<br>
+	<!-- <center>
+		<h3 style=" margin-bottom: 0px;" class='alert alert-success'>Signup As Admin!</h3>
+	</center> -->
+	<div class="signup-form">
+		<form method="post" class="form-horizontal">
+			<img src="/static/images/Admin login icon.png" alt="" class="adminsignup-img">
+			<center>
+				<h2 class="h2">Admin Signup</h2>
+			</center>
+
+			<input type="hidden" name="csrfmiddlewaretoken"
+				value="iCxiOFcRRxsaaypjDTjC83jLkajjOXhR0JWBtgRtt5twVraNawxrcU6pRJByKIdE">
+
+			{% csrf_token %}
+			<div class="container">
+				<div class="form-group text-center">
+					<!-- <label class="control-label col-xs-4"><label for="id_first_name">First name:</label></label> -->
+					<div class="col-xs-8 form-left">
+						<input type="text" name="first_name" maxlength="150" id="id_first_name" placeholder="First Name" class="form-items">
+						<input type="text" name="last_name" maxlength="150" id="id_last_name" placeholder="Last Name" class="form-items">
+
+					</div>
+				</div>
+
+				<!-- <div class="form-group text-center">
+					<label class="control-label col-xs-4"><label for="id_last_name">Last name:</label></label>
+					<div class="col-xs-8">
+						<input type="text" name="last_name" maxlength="150" id="id_last_name">
+
+					</div>
+				</div> -->
+
+				<div class="form-group text-center">
+					<!-- <label class="control-label col-xs-4"><label for="id_username">Username:</label></label> -->
+					<div class="col-xs-8 form-right">
+						<input type="text" name="username" maxlength="150" required id="id_username" placeholder="Username" class="form-items">
+						<input type="text" name="password" maxlength="128" required id="id_password" placeholder="Password" class="form-items">
+
+
+					</div>
+				</div>
+
+				<!-- <div class="form-group text-center">
+					<label class="control-label col-xs-4"><label for="id_password">Password:</label></label>
+					<div class="col-xs-8">
+						<input type="text" name="password" maxlength="128" required id="id_password">
+
+					</div>
+				</div> -->
+
+			</div>
+			<!-- <div class="form-group text-center">
+				<div class="col-xs-8 col-xs-offset-4">
+					<button type="submit" class="btn btn-success btn-lg" style="border-radius:0px;">Sign Up</button>
+				</div>
+			</div> -->
+			<button type="submit" style="border-radius: 20px;" class=" butn" >Signup</button>
+		</form>
+		<div class="text-center signupbtn">Already have an account? <a href="adminlogin">Login here</a></div>
+	</div>
+
+	{% include "library/footer.html" %}
+</body>
+
+</html>

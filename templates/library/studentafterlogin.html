@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Student Controls</title>
+<link rel="icon" type="image/x-icon" href="/static/images/lib.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Sofia+Sans+Condensed:ital,wght@1,300;1,500&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
+  <style media="screen">
+    .display-4 {
+      font-family: 'Sedgwick Ave Display', cursive, 'wellfleet', 'Algerian';
+      font-size: 7rem;
+
+
+    }
+
+    .lead {
+      font-family: 'Lobster', cursive;
+      font-size: 30px;
+      color: rgb(80, 74, 74);
+      text-align: center;
+    }
+
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    #para {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      font-size: 21px;
+      text-align: center;
+    }
+
+
+    .btndiv {
+      display: flex;
+      /* justify-content: center; */
+      flex-direction: column;
+      align-items: center;
+      /* height: 300px; */
+      text-align: center;
+    }
+
+    .buttons {
+      padding: 15px;
+      font-weight: 700;
+      font-size: 20px;
+      background-color: #ecf0f1;
+      text-decoration: none;
+      text-align: center;
+      max-width: 400px;
+      transition: all .5s ease;
+      /* margin-bottom: 0px; */
+      border: 0.1px solid rgba(0, 0, 0, 0.24);
+
+      /* height: 30px; */
+    }
+
+    .buttons--action {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      border-radius: 1.5rem;
+      background-color: #F4C430;
+      color: #000;
+      transition: all .5s ease 0s;
+      box-shadow: 0 10px #E49B0F;
+    }
+
+
+
+    .buttons--action span {
+      display: inline-block;
+      position: relative;
+      transition: all .5s ease;
+      text-align: center;
+      color: black;
+      text-decoration: none;
+    }
+
+    .buttons--action span:before {
+      content: '▶▶';
+      color: #000;
+      font-size: 1.3rem;
+      font-family: FontAwesome;
+      display: inline-block;
+      text-align: center;
+      position: absolute;
+      /* top: 1.0px; */
+      left: 1.5rem; 
+      opacity: 0;
+      transition: all .1s ease 0s;
+    }
+
+    .buttons--action:hover span {
+      padding-left: 1.5rem;
+
+    }
+
+    .buttons--action:hover span:before {
+      left: -10px;
+      opacity: 1;
+
+    }
+
+    .buttons--action:active {
+      box-shadow: 0 5px #f0932b;
+      transform: translateY(5px);
+    }
+  </style>
+</head>
+
+<body style="background-color: rgba(255, 255, 0, 0.486);">
+  {% include "library/navbarstudent.html" %}
+
+
+  <br>
+  <br>
+  <!-- <center>
+    <h3 style=" margin-bottom: 0px;" class='alert alert-success'>Welcome to Library Management System</h3>
+  </center> -->
+  <div class="jumbotron container" style="background:transparent;">
+    <h1 class="display-4">Hello {{user.first_name}} !</h1>
+    <p class="lead">As you are Student, you can see how many book you have taken from library with fine and many more
+      ...!
+    </p>
+    <hr class="my-4">
+    <p id="para">Option Available For You</p>
+    <div class="btndiv" style="text-align:center">
+      <a href="viewissuedbookbystudent" role="button" aria-pressed="true"
+        class="buttons buttons--action button"><span>View issued book to you</span></a><br><br>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+</html>
